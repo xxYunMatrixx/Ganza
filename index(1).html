@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--Tells the browser which version of HTML is being used -->
+<html>
+<!-- it doesn't zoom out and zooms in to the page to make it more visible on other devices. -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="GLogo.ico">
+  <title>Ganza</title>
+</head>
+
+<body>
+  <a href="index.html"><img id="logo" src="https://iili.io/Hvtkd8B.md.png"></img></a>
+  <img id="MG" src="https://iili.io/HYNI6G4.png"></img>
+  <!-- This sends the form data to search.html, the action is it sending it to search.html -->
+  <!-- The Get method specifies how the data will be sent to search.html -->
+  <form action="search.html" method="get">
+    <input type="text" id="search" name="q" placeholder="Search Ganza or Find your Dad">
+    <button id="fyd" type="button" onclick="FindDad()">Find Your Dad</button>
+    <button id="submit" type="submit">Ganza Search</button>
+  </form>
+  <footer>
+    <a id="SigA" target="blank" href="https://www.instagram.com/yunmatrixx/">Yun™ 2023<p id="Sig"></p></a>
+  </footer>
+  <script>
+    function FindDad() {
+      window.open("https://youtu.be/yrZDn1fwgKE?t=141");
+    }
+  </script>
+  <style>
+    #SigA {
+      text-decoration: none;
+      color: gray;
+      position: absolute;
+      font-family: arial;
+      font-size: 10px;
+      position: fixed;
+      top: 630px;
+      left: 1290px;
+    }
+
+    #MG {
+      height: 18px;
+      top: 318px;
+      left: 400px;
+      position: fixed;
+      z-index: 1;
+    }
+
+    #logo {
+      height: 105px;
+      left: 539px;
+      top: 175px;
+      position: fixed;
+    }
+
+    #search {
+      top: 300px;
+      padding-left: 50px;
+      border-radius: 90px;
+      position: fixed;
+      outline: none;
+      border-style: solid;
+      height: 50px;
+      width: 500px;
+      left: 380px;
+      z-index: -1;
+      font-size: 15px;
+    }
+
+    #submit {
+      left: 530px;
+      top: 390px;
+      color: #3c4243;
+      border-color: #f8f9f9;
+      background-color: #f8f9f9;
+      border-style: solid;
+      font-family: arial;
+      border-radius: 5px;
+      height: 40px;
+      width: 120px;
+      position: fixed;
+    }
+
+    #fyd {
+      left: 680px;
+      top: 390px;
+      color: #3c4243;
+      border-color: #f8f9f9;
+      background-color: #f8f9f9;
+      border-style: solid;
+      font-family: arial;
+      border-radius: 5px;
+      height: 40px;
+      width: 120px;
+      position: fixed;
+    }
+
+    @media only screen and (max-width: 419px) {
+      body {}
+
+      #logo {
+        left: 90px;
+        top: 225px;
+        left: 84px;
+      }
+
+      #search {
+        top: 340px;
+        left: 2px;
+        width: 350px;
+        position: absolute;
+
+
+      }
+
+      #MG {
+        top: 360px;
+        left: 20px;
+      }
+
+      #submit {
+        left: 80px;
+        top: 420px;
+      }
+
+      #fyd {
+        left: 220px;
+        top: 420px;
+      }
+
+      #SigA {
+        display: hidden;
+      }
+    }
+
+    @media only screen and (max-width: 375px) {
+      body {}
+
+      #logo {
+        left: 60px;
+        top: 225px;
+        left: 75px;
+      }
+
+      #search {
+        top: 340px;
+        left: 2px;
+        width: 315px;
+        position: absolute;
+
+
+      }
+
+      #MG {
+        top: 360px;
+        left: 20px;
+      }
+
+      #submit {
+        left: 80px;
+        top: 420px;
+      }
+
+      #fyd {
+        left: 220px;
+        top: 420px;
+      }
+
+      #SigA {
+        display: hidden;
+      }
+    }
+  </style>
+</body>
+
+</html>

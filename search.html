@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/x-icon" href="GLogo.ico">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+  </style>
+  </style>
+  <title>Ganza</title>
+</head>
+
+<body>
+  <div id="divider">
+    <a href="index.html"><img id="logo" src="https://iili.io/Hvtkd8B.md.png"></img></a>
+    <form action="search.html" method="get">
+      <input type="text" id="search" class="ok" name="q">
+      <button id="SubBut" type="subtitlemit">Search</button>
+      <input type="image" id="MG" src="https://iili.io/HvpzuA7.md.png"></input>
+    </form>
+  </div>
+  <p id="SR">Search Results:</p>
+  <ul id="search-results">
+    <!-- Search results will be displayed here -->
+  </ul>
+  <style>
+    #SR{
+      font-family: archivo narrow;
+      color: gray;
+      top: 110px;
+      left:90px;
+      position: fixed;
+    }
+
+    #divider {
+      background-color: lightgray;
+      top: 120px;
+      position: fixed;
+      height: 0.5px;
+      left: -19px;
+      width: 1500px;
+    }
+
+    #search-results {
+      left: 90px;
+      font-size: 25px;
+      font-family: Archivo Narrow;
+      top: 130px;
+      position: fixed;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    #logo {
+      left: 30px;
+      height: 40px;
+      top: 35px;
+      position: fixed;
+    }
+
+    #MG {
+      height: 22px;
+      z-index: 0;
+      top: 45px;
+      left: 740px;
+      position: fixed;
+    }
+
+    #search {
+      /* The first value determines how far the shadow should */
+      /*be from the box on the left or right, and the second value */
+      /*determines how far the shadow should be from the box on the top or bottom*/
+      font-family: arial;
+      border-color: white;
+      padding-left: 20px;
+      font-size: 15.2px;
+      outline: none;
+      box-shadow: 1px 2px 5px lightgray;
+      top: 30px;
+      height: 45px;
+      width: 590px;
+      left: 170px;
+      border-radius: 50px;
+      border-style: solid;
+      position: fixed;
+      z-index: -1
+    }
+
+    #search-results {
+      list-style: none;
+    }
+
+    #SubBut {
+      visibility: hidden;
+    }
+
+    a {
+      color: #722dab;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul span {
+      color: gray;
+      margin-top: 28px;
+      left: 130px;
+      font-size: 12.5px;
+      position: fixed;
+
+    }
+
+    ul p {
+      color: gray;
+      font-size: 15px;
+      margin-top: 8px;
+    }
+  </style>
+  <script>
+    // Define the data to be searched (in this case, an array of objects)
+    const data = [
+      {title: 'YouTube: Watch & Share Videos', url: 'https://www.youtube.com', category: 'entertainment', subtitle: " Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube."},
+      {title: 'Google', url: 'https://www.google.com', category: 'search engine', subtitle: "Search the world's information, including webpages, images, videos and more."},
+      {title: 'Instagram', url: 'https://www.instagram.com', category: 'social media', subtitle: "A simple, fun & creative way to capture, edit & share photos, videos & messages with friends & family."},
+      {title: 'Amazon', url: 'https://www.amazon.com', category: 'ecommerence', subtitle: "Free shipping on millions of items. Get the best of Shopping and Entertainment with Prime."},
+      {title: 'Yahoo!', url: 'https://yahoo.com', category: 'search engine', subtitle: "Latest news coverage, email, free stock quotes, live scores and video are just the beginning. Discover more every day at Yahoo!."},
+      {title: 'Bing', url: 'https://bing.com', category: 'search engine', subtitle: "Bing helps you turn information into action, making it faster and easier to go from searching to doing."},
+      {title: 'DuckDuckGo', url: 'https://DuckDuckGo.com', category: 'search engine', subtitle: "The Internet privacy company that empowers you to seamlessly take control of your personal information online, without any tradeoffs."},
+      {title: 'Ganza', url: 'https://Ganza.rf.gd', category: 'search engine', subtitle: "A fairly nice search engine that takes immense insporation from Google."},
+      {title: 'ChatGPT', url: 'https://chat.openai.com', category: 'search engine', subtitle: "ChatGPT is a sibling model to InstructGPT, which is trained to follow an instruction in a prompt and provide a detailed response."},
+      {title: 'Facebook', url: 'https://facebook.com', category: 'Social Media', subtitle: "Connect with friends, family and other people you know. Share photos and videos, send messages and get updates."},
+      {title: 'Netflix', url: 'https://netflix.com', category: 'Entertainment', subtitle: "Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies, anime, documentaries."},
+      {title: 'Steam', url: 'https://steam.com', category: 'Video Games', subtitle: "Steam is the ultimate destination for playing, discussing, and creating games."},
+      {title: 'TikTok', url: 'https://tiktok.com', category: 'search engine', subtitle: "TikTok - trends start here. On a device or on the web, viewers can watch and discover millions of personalized short videos."},
+      {title: 'WhatsApp', url: 'https://WhatsApp.com', category: 'social media', subtitle: "More than 2 billion people in over 180 countries use WhatsApp to stay in touch with friends and family, anytime and anywhere."},
+      {title: 'Gmail', url: 'https://gmail.com', category: 'email', subtitle: "Gmail is a free email service provided by Google. As of 2019, it had 1.5 billion active users worldwide."},
+      {title: 'Outlook', url: 'https://outlook.com', category: 'email', subtitle: "Get free Outlook email and calendar, plus Office Online apps like Word, Excel and PowerPoint. Sign in to access your Outlook, Hotmail or Live email account."},
+      {title: 'Reddit', url: 'https://reddit.com', category: 'social media', subtitle: "Reddit is a network of communities where people can dive into their interests, hobbies and passions."},
+      {title: 'Discord', url: 'https://discord.com', category: 'social media', subtitle: "Discord is the easiest way to talk over voice, video, and text. Talk, chat, hang out, and stay close with your friends and communities."},
+      {title: 'Wikipedia', url: 'https://Wikiapedia.org', category: 'information', subtitle: "Wikipedia is a free online encyclopedia, created and edited by volunteers around the world and hosted by the Wikimedia Foundation."},
+      {title: 'Urban Dictionary', url: 'https://urbandictionary.com', category: 'humor', subtitle: "Urban Dictionary is a place where you can be as stupid or vulgar as you want."},
+      {title: 'Twitter', url: 'https://Twitter.com', category: 'social media', subtitle: "From breaking news and entertainment to sports and politics, get the full story with all the live commentary."},
+      {title: 'Pinterest', url: 'https://pinterest.com', category: 'social media', subtitle: "Discover recipes, home ideas, style inspiration and other ideas to try"},
+      {title: 'Reddit', url: 'https://reddit.com', category: 'social media', subtitle: "Reddit is a network of communities where people can dive into their interests, hobbies and passions."},
+      {title: 'Quora Awnsers', url: 'https://quora.com', category: 'information', subtitle: "Quora is a place to gain and share knowledge. It's a platform to ask questions and connect with people who contribute unique insights and quality answers."},
+      {title: 'eBay: Electronics, Cars, Fashion, Collectibles & More', url: 'https://ebay.com', category: 'buying', subtitle: "Buy & sell electronics, cars, clothes, collectibles & more on eBay, the world's online marketplace. Top brands, low prices & free shipping on many items."},
+      {title: 'GOAT', url: 'https://GOAT.com', category: 'buying', subtitle: "The global platform for the greatest products from the past, present and future. Shop new and used sneakers, apparel and accessories."},
+      {title: 'wikiHow', url: 'https://wikiHow.com', category: 'How to', subtitle: "wikiHow is an award-winning website where trusted research and expert knowledge come together."},
+      {title: 'Microsoft', url: 'https://microsoft.com', category: 'Technology', subtitle: "Explore Microsoft products and services for your home or business. Shop Surface, Microsoft 365, Xbox, Windows, Azure, and more."},
+      {title: 'Samsung', url: 'https://Samsung.com', category: 'Technology', subtitle: 'Discover the latest in electronic & smart appliance technology with Samsung. Find the next big thing from smartphones & tablets to laptops & tvs & more.'},
+      {title: 'Zoom', url: 'https://Zoom.us', category: 'social media', subtitle: "Modernize workflows with Zoom's trusted collaboration tools: including video meetings, team chat, VoIP phone, webinars, whiteboard, contact center."},
+      {title: 'Hulu', url: 'https://Hulu.com', category: 'entertainment', subtitle: "Get 85+ top channels on Hulu (With Ads) + Live TV with your favorite live sports, news, and events - plus the entire Hulu streaming library."},
+      {title: 'HBO Max', url: 'https://hbomax.com', category: 'entertainment', subtitle: "HBO Max is a stand-alone streaming platform that bundles all of HBO together with even more TV favorites, blockbuster movies, and new Max Originals for everyone."},
+      {title: 'Peacock', url: 'https://peacock.com', category: 'entertainment', subtitle: "Peacock is a streaming service from NBCUniversal."},
+      {title: 'National Basketball Association', url: 'https://NBA.com', category: 'sports', subtitle: "The official site of the National Basketball Association. Follow the action on NBA scores, schedules, stats, news, Team and Player news."},
+      {title: 'National Football League', url: 'https://NFL.com', category: 'sports', subtitle: "Test."},
+      {title: 'Major League Baseball', url: 'https://MLB.com', category: 'sports', subtitle: "Coverage includes audio and video clips, interviews, statistics, schedules and exclusive stories."},
+      {title: 'Roblox', url: 'https://Roblox.com', category: 'Video Games', subtitle: "Roblox is a global platform that brings people together through play."},
+      {title: 'Shein', url: 'https://Shein.com', category: 'shopping', subtitle: "Free shipping on eligible purchases ✓. Get the latest womens fashion online."},
+      {title: 'Calculator', url: 'https://calculator.net', category: 'calculator', subtitle: "Online calculator for quick calculations, along with a large collection of calculators on math, finance, fitness, and more, each with in-depth information."},
+      {title: 'Spotify', url: 'https://Spotify.com', category: 'music', subtitle: "Spotify is a digital music service that gives you access to millions of songs."},
+      {title: 'SoundCloud', url: 'https://SoundCloud.com', category: 'music', subtitle: "Discover and play over 320 million music tracks. Join the world's largest online community of artists, bands, DJs, and audio creators."},
+      {title: 'Deezer', url: 'https://Deezer.com', category: 'music', subtitle: "Test."},
+      {title: 'Disney+', url: 'https://disneyplus.com', category: 'entertainment', subtitle: "Shop GameStop, the world's largest retail gaming and trade-in destination for Xbox, PlayStation, and Nintendo games, systems, consoles & accessories."},
+      {title: 'GameStop', url: 'https://gamestop.com', category: 'buying', subtitle: "Shop GameStop, the world's largest retail gaming and trade-in destination for Xbox, PlayStation, and Nintendo games, systems, consoles & accessories."},
+      {title: 'Google Translate', url: 'https://Translate.google.com', category: 'information', subtitle: "Google's service, offered free of charge, instantly translates words, phrases, and web pages between English and over 100 other languages."},
+      {title: 'DeepL Translate', url: 'https://deepl.com', category: 'information', subtitle: "Translate texts & full document files instantly. Accurate translations for individuals and Teams. Millions translate with DeepL every day."},
+      {title: 'Todoist', url: 'https://Todoist.com', category: 'productivity', subtitle: "Trusted by 30 million people and teams. Todoist is the world's favorite task manager and to-do list app. Finally become focused, organized and calm."},
+      {title: 'KimCartoon', url: 'https://KimCartoon.il', category: 'entertainment', subtitle: "Watch cartoons online in high quality. Free download high quality cartoons. Various formats from 240p to 720p HD (or even 1080p)."},
+      {title: 'DropBox', url: 'https://Dropbox.com', category: 'File Hosting', subtitle: "Dropbox brings everything—traditional files, cloud content, and web shortcuts—together in one place."},
+      {title: 'Google Drive', url: 'https://drive.google.com', category: 'File Hosting', subtitle: "Google Drive's file sharing platform that provides a personal, secure cloud storage option to share content with other users."},
+      {title: 'Apple', url: 'https://Apple.com', category: 'Technology', subtitle: "Discover the innovative world of Apple and shop everything iPhone, iPad, Apple Watch, Mac, and Apple TV."},
+      {title: 'Wayback Machine', url: 'https://web.archive.org', category: 'information', subtitle: "Test."},
+      {title: 'Codecademy', url: 'https://Codecademy.com', category: 'education', subtitle: "Test."},
+      {title: 'Twitch: Video Game Streaming', url: 'https://twitch.tv', category: 'entertainment', subtitle: "Twitch is an interactive livestreaming service for content spanning gaming, entertainment, sports, music, and more."},
+      {title: 'W3Schools', url: 'https://w3schools.com', category: 'education', subtitle: "W3Schools is optimized for learning, testing, and training."},
+      {title: 'Udemy', url: 'https://Udemy.com', category: 'education', subtitle: "Test."},
+      {title: 'Adobe', url: 'https://adobe.com', category: 'software', subtitle: "Test."},
+      {title: 'Vimeo: Video Hosting', url: 'https://vimeo.com', category: 'entertainment', subtitle: "Vimeo is the world's most innovative video experience platform. We enable anyone to create high-quality video experiences to connect better and bring ideas."},
+      {title: 'Dailymotion: Video Hosting', url: 'https://dailymotion.com', category: 'entertainment', subtitle: "The latest news, sports, music and entertainment videos on Dailymotion."},
+      {title: 'Fandom', url: 'https://fandom.com', category: 'entertainment', subtitle: "The entertainment site where fans come first. Your daily source for all things TV, movies, and games, including Star Wars, Fallout, Marvel, DC and more."},
+      {title: 'Microsoft Azure: Cloud Computing Service', url: 'https://azure.microsoft.com', category: 'Technology', subtitle: "AI-powered innovation—accelerated with Azure. Start building AI solutions today using the latest models and your favorite Azure tools."},
+      {title: 'What Is My I.P. Address?', url: 'https://whatismyipaddress.com', category: 'Technology', subtitle: "Test."},
+      {title: '123Movies: Free Streaming', url: 'https://https://w9.123movies-org.site', category: 'entertainment', subtitle: "123Movies Watch Movies Online For Free and Download the latest movies without Registration at 123 Movies."},
+      {title: 'CodePen', url: 'https://codepen.io', category: 'coding', subtitle: "CodePen is a social development environment for front-end designers and developers."},
+      {title: 'Audible:', url: 'https://Audible.com', category: 'coding', subtitle: "Audible is a membership service that provides customers with the world's largest selection of audiobooks as well as podcasts, exclusive originals and more."},
+      {title: 'Y8 Games', url: 'https://y8.com', category: 'Video Games', subtitle: "Y8 Games is a game publisher and game developer. The Y8 platform is a social network of 30 million players and growing."},
+      {title: 'Replit', url: 'https://Replit.com', category: 'coding', subtitle: "Run code live in your browser. Write and run code in 50+ languages online with Replit, a powerful IDE, compiler, & interpreter."},
+      {title: 'Squarespace: Website Builder', url: 'Create a customizable website or online store with an all-in-one solution from Squarespace.', category: 'Website Builder', subtitle: "Test."},
+      {title: 'Wix: Website Builder', url: 'https://wix.com', category: 'Website Builder', subtitle: "Create a website with Wix's robust website builder. With 900+ strategically designed templates and advanced SEO and marketing tools, build your brand online."}
+    ]
+
+    // Get the search term from the query string
+    //This produces a new link for the site based off of the information from the search id
+    const params = new URLSearchParams(window.location.search);
+    //This gets the result from parmas which gets the result from 
+    //the text box named q
+    const searchTerm = params.get('q').toLowerCase();
+    // Filters the data based on the search term
+    //This creates a function (=>) that lowercases all data in
+    //the array and includes every character
+    const filteredData = data.filter(item =>
+      //Filters and lowercases the items title
+      //And matches it up with every character in the search term
+      //This doesn't add it into the list it just adds everything that matches up with the search term
+      //It check if it "includes" anything relating to the searchterm down to the character
+      //It just creates a new array with the matching information
+      item.title.toLowerCase().includes(searchTerm) || item.category.toLowerCase().includes(searchTerm));
+
+    // Display the search results
+    if (filteredData.length === 0) {
+      document.getElementById('search-results').innerHTML = '<li>Sorry, but no results found.</li>';
+    } else {
+      //For every item in here execute this function
+      filteredData.forEach(item => {
+        //Create a listed item
+        const li = document.createElement('li');
+        //Create a link
+        const link = document.createElement('a');
+        //The link is equal to the item url
+        const subtitle = document.createElement('p')
+        const URL1 = document.createElement('span')
+        link.href = item.url;
+        //The link is equal to the title of the item
+        link.textContent = item.title;
+        subtitle.textContent = item.subtitle;
+        URL1.textContent = item.url;
+        //This adds the link as a part of the li
+        li.appendChild(link);
+        li.appendChild(URL1);
+        li.appendChild(subtitle);
+        //This appends the li to the ul
+        document.getElementById('search-results').appendChild(li);
+      });
+    }
+  </script>
+</body>
+
+</html>
